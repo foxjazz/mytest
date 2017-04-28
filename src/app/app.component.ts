@@ -16,9 +16,16 @@ export class AppComponent {
     this.ol.description = "init";
   }
 
-  get getol():string {
+  get getol(): string {
           return this.ol.description;
 
+  }
+  changeIt() {
+    this.ol = this.commentList[2];
+  }
+  changeItToOne() {
+    console.log("changed to one");
+    this.ol = this.commentList[0];
   }
   ol: Xol;
   myname: string;
