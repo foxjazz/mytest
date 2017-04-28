@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+interface ICommentD{description: string;}
+
+class Xol implements ICommentD {
+  public description: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor() {
+    this.ol = new Xol();
+    this.ol.description = "init";
+  }
+
+  get getol():string {
+          return this.ol.description;
+
+  }
+  ol: Xol;
+  myname: string;
+  ee: string;
+
+  obj: string;
+  commentList: Array<ICommentD>;
+  onCommentSelect(e: any){
+    this.obj = JSON.stringify(this.ol);
+    this.myname = this.ol.description;
+    this.ee = e;
+  }
+
+  ngOnInit(){
+    this.myname = "";
+    this.commentList = new Array<ICommentD>();
+    this.commentList.push({description: "data 1"});
+    this.commentList.push({description: "data 2"});
+    this.commentList.push({description: "data 3"});
+  }
+
 }

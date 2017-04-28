@@ -1,3 +1,14 @@
 <h1>
-  {{title}}
+  <div>
+    Value = {{getol}}
+    ee = {{ee}}
+    objecdt = {{obj}}
+  </div>
+
+  <label for="clx">Comment</label>
+  <select id="clx" name="cl" [(ngModel)]="ol" (ngModelChange)="onCommentSelect($event)">
+    <option *ngFor="let cl of commentList"  >
+      {{ cl.description }}
+    </option>
+  </select>
 </h1>
