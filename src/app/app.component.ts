@@ -26,25 +26,33 @@ export class AppComponent {
   changeItToOne() {
     console.log("changed to one");
     this.ol = this.commentList[0];
+    this.obj = JSON.stringify(this.ol);
   }
   ol: Xol;
-  myname: string;
+  myname: Xol;
   ee: string;
 
   obj: string;
-  commentList: Array<ICommentD>;
+  commentList: Array<Xol>;
   onCommentSelect(e: any){
     this.obj = JSON.stringify(this.ol);
-    this.myname = this.ol.description;
+    this.myname = this.ol;
     this.ee = e;
   }
 
   ngOnInit(){
-    this.myname = "";
-    this.commentList = new Array<ICommentD>();
-    this.commentList.push({description: "data 1"});
-    this.commentList.push({description: "data 2"});
-    this.commentList.push({description: "data 3"});
+
+    this.commentList = new Array<Xol>();
+    let o = new Xol();
+    let o2: Xol;
+    o.description = "data 1";
+    this.commentList.push(o);
+    o2 = Object.assign({},o);
+    o2.description = "data 2";
+    this.commentList.push(o2);
+    o2 = Object.assign({},o);
+    o2.description = "data 3";
+    this.commentList.push(o2);
   }
 
 }
