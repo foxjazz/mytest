@@ -8,7 +8,7 @@
   </div>
 
   <label for="clx">Comment</label>
-  <select id="clx" name="cl" [(ngModel)]="ol" (ngModelChange)="onCommentSelect($event)">
+  <select id="clx" name="cl" [(ngModel)]="ol.description" (ngModelChange)="onCommentSelect($event)">
     <option *ngFor="let cl of commentList"  >
       {{ cl.description }}
     </option>
