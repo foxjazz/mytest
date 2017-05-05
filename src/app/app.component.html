@@ -1,10 +1,14 @@
 <h1>
   <div>
-    Value = {{getol}}
-    ee = {{ee}}
-    objecdt = {{obj}}
-    myname: {{myname}}
-    getol: {{getol}}
+    <button (click)="getCmData()">Get CM Data</button>
+    the data: {{cmdata}}
+  </div>
+<div>
+  <button (click)="checkToken()">check token</button>
+  jt: {{jtoken}} should = {{token}}  answer = {{answer}}
+</div>
+  <div>
+    header: {{header}}
   </div>
 
   <label for="clx">Comment</label>
@@ -13,10 +17,17 @@
       {{ cl.description }}
     </option>
   </select>
-  <div>
-  <button (click)="changeIt()">chang it</button>
+  <div *ngIf="!inCall">
+    Phone #: <input #phone>
+    <button class="btn-blue" (click)="makeCall(phone.value)">Call</button>
+  </div>
+  <div *ngIf="inCall">
+    <button class="btn-blue" (click)="hangUp()">Hang up</button>
   </div>
   <div>
     <button (click)="changeItToOne()"> to one</button>
+  </div>
+  <div>
+    fromAddress: {{fd.fromAddress}}  id: {{fd.id}}
   </div>
 </h1>

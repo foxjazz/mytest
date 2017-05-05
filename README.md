@@ -1,4 +1,8 @@
+ Password is St4tebr1dge!
 # Mytry
+ng build --base-href https://uccx-001-app-prod.statebridgecompany.com:8445/3rdpartygadget/files/testcall/
+
+https://uccx-001-app-prod.statebridgecompany.com:8445/3rdpartygadget/files/testcall/?userName=jdickinson&token=amRpY2tpbnNvbjppc0ZyaWRheSEz
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
