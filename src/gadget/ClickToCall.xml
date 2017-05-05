@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="Click to Call"
+            description="Click to Call">
+
+        <Require feature="settitle" />
+        <Require feature="dynamic-height" />
+        <Require feature="pubsub-2" />
+        <Require feature="setprefs" />
+        <Require feature="loadingindicator">
+            <Param name="manual-dismiss">false</Param>
+            <Param name="loading-timeout">10</Param>
+        </Require>
+    </ModulePrefs>
+
+    <Content type="html">
+        <![CDATA[
+            <!DOCTYPE html>
+            <!-- Styling -->
+            <link rel="stylesheet" href="ClickToCall.css" type="text/css" />
+
+            <!-- jQuery -->
+            <script type="text/javascript" src="/desktop/assets/js/jquery.min.js"></script>
+           
+            <!-- Finesse Library -->
+            <script type="text/javascript" src="/desktop/assets/js/finesse.js"></script>
+
+            <!-- Gadget Business Logic -->
+            <script type="text/javascript" src="ClickToCall.js"></script>
+
+            <body class="claro">
+                <!-- Click Gadget -->
+                <div>
+                    <fieldset id="userfieldset" class="outline">
+                        <div id="agentout">
+                            
+                        </div>
+          
+                        <div><b>  </b><span id="errorMsg"></div>
+                    </fieldset>
+                    <br>
+               </div>
+            </body>
+
+            <script type="text/javascript">
+                gadgets.HubSettings.onConnect = function () {
+                    finesse.modules.ClickGadget.init();
+                };
+            </script>
+        ]]>
+    </Content>
+</Module>
